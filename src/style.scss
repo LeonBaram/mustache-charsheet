@@ -1,0 +1,186 @@
+@import "./sass-partials/reset.scss";
+
+body {
+  font-family: sans-serif;
+  text-transform: capitalize;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+@mixin labelled($table: false) {
+  position: relative;
+  border-bottom: 1px solid black;
+
+  .label {
+    position: absolute;
+    bottom: -1rem;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+header {
+  width: 90vw;
+  max-width: 1020px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  .name {
+    margin: auto 0;
+
+    font-family: serif;
+    font-size: 2rem;
+  }
+
+  table {
+    width: 69%;
+    height: 70px;
+    margin-bottom: 20px;
+
+    border-spacing: 14px 0;
+    border-collapse: separate;
+
+    td {
+      @include labelled($table: true);
+      padding: 1.75rem 0;
+    }
+  }
+}
+
+main {
+  width: 90vw;
+  max-width: 1020px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 90px 190px 270px 270px;
+  grid-template-rows:
+    45px
+    45px
+    92px
+    74px
+    74px
+    300px
+    32px
+    215px;
+
+  gap: 12px;
+  grid-template-areas:
+    "stats                inspiration         combat-info personality"
+    "stats                proficiency         combat-info personality"
+    "stats                saves               health      ideals"
+    "stats                saves               health      bonds"
+    "stats                skills              health      flaws"
+    "stats                skills              actions     feats"
+    "passive-perception   passive-perception  equipment   feats"
+    "other-proficiencies  other-proficiencies equipment   feats";
+
+  .inspiration {
+    grid-area: inspiration;
+    @include labelled();
+  }
+
+  .proficiency {
+    grid-area: proficiency;
+    @include labelled();
+  }
+
+  .passive-perception {
+    grid-area: passive-perception;
+    @include labelled();
+  }
+
+  .stats {
+    grid-area: stats;
+    position: relative;
+    ul {
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      li {
+        width: 100%;
+        padding: 20px 0;
+        border: 1px solid black;
+        border-radius: 10px;
+
+        .name {
+          text-align: center;
+          text-transform: uppercase;
+          // font-size: 14px;
+        }
+
+        .val {
+          text-align: center;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .saves {
+    grid-area: saves;
+  }
+
+  .skills {
+    grid-area: skills;
+  }
+
+  .other-proficiencies {
+    grid-area: other-proficiencies;
+  }
+
+  .combat-info {
+    grid-area: combat-info;
+    display: flex;
+
+    .armor-class {
+      @include labelled();
+    }
+  }
+
+  .health {
+    grid-area: health;
+  }
+
+  .actions {
+    grid-area: actions;
+  }
+
+  .equipment {
+    grid-area: equipment;
+  }
+
+  .personality {
+    grid-area: personality;
+  }
+
+  .ideals {
+    grid-area: ideals;
+  }
+
+  .bonds {
+    grid-area: bonds;
+  }
+
+  .flaws {
+    grid-area: flaws;
+  }
+
+  .feats {
+    grid-area: feats;
+  }
+}

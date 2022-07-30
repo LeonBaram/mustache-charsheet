@@ -1,0 +1,247 @@
+---
+player-name: Leon
+name: Ezri Bartle
+level: 11
+class: wizard
+subclass: conjuration
+race: human (variant)
+background: custom
+alignment: neutral
+
+inspiration: yes
+
+# hit points
+hp:
+  current: 101
+  max: 38
+# temporary hit points
+temp-hp: 0
+hit-dice:
+  current: 0d6
+  max: 10d6
+
+# armor class
+ac: 17 # 10 + dex (+3 from mage armor)
+speed: 30
+initiative: "+4" # dex
+proficiency: "+4"
+passive-perception: 10 # 10 + perception
+
+death-saves:
+  passed: 0
+  failed: 0
+
+exhaustion: 0
+current-conditions:
+damage-immunities:
+condition-immunities: paralyzed, diseased, poisoned
+resistances:
+
+feats:
+  - keen mind
+  - magic initiate
+  - resilient (con)
+  - boon of perfect health (immune to all diseases and poisons, advantage on con saves)
+class-features:
+  - spellbook
+  - arcane recovery
+  - minor conjuration
+  - benign transposition
+  - focused conjuration
+
+# long-rest-reminder:
+#   - reset full health
+#   - reset half hit dice
+#   - reset full spell slots
+#   - reset arcane recovery
+#   - reset benign transposition
+
+stats:
+  - { name: str, score:  6, mod: "-2", save: "-2", }
+  - { name: dex, score: 18, mod: "+4", save: "+4", }
+  - { name: con, score: 18, mod: "+4", save: "+8", proficient: yes } # advantage on saves
+  - { name: int, score: 20, mod: "+5", save: "+9", proficient: yes }
+  - { name: wis, score: 10, mod: "+0", save: "+4", proficient: yes }
+  - { name: cha, score:  6, mod: "-2", save: "-2", }
+
+skills:
+    # str
+  - { name: athletics,        bonus: "-2", }
+    # dex
+  - { name: acrobatics,       bonus: "+4", }
+  - { name: sleight of hand,  bonus: "+8", proficient: yes }
+  - { name: stealth,          bonus: "+8", proficient: yes }
+    # int
+  - { name: arcana,           bonus: "+9", proficient: yes }
+  - { name: history,          bonus: "+9", proficient: yes }
+  - { name: investigation,    bonus: "+9", proficient: yes }
+  - { name: nature,           bonus: "+9", proficient: yes }
+  - { name: religion,         bonus: "+9", proficient: yes }
+    # wis
+  - { name: animal handling,  bonus: "+0", }
+  - { name: insight,          bonus: "+0", }
+  - { name: medicine,         bonus: "+0", }
+  - { name: perception,       bonus: "+0", }
+  - { name: survival,         bonus: "+0", }
+    # cha
+  - { name: deception,        bonus: "-2", }
+  - { name: intimidation,     bonus: "-2", }
+  - { name: performance,      bonus: "-2", }
+  - { name: persuasion,       bonus: "-2", }
+
+# daily cast: mage armor, morty's sanctum
+
+spells:
+  class: wizard
+  stat: int
+  attack: "+12" # int + proficiency (+3 from flamel's focus)
+  dc: 18 # int + proficiency + 8 (+1 from arcane grimoire)
+  prepared-max: 16 # int + (wizard level)
+  arcane-recovery: 7 # (wizard level) / 2, rounded up (+1 from arcane grimoire)
+
+  known:
+    - lvl: 0 # cantrips
+      spells:
+        - name: fire bolt (vs_)
+        - name: mage hand (vs_)
+        - name: message (vsm)
+        - name: mind sliver (v__)
+        - name: light (v_m)
+        - name: prestidigitation (vs_)
+        - name: shocking grasp (vs_)
+
+    - lvl: 1
+      slots: 3/4
+      spells:
+        - name: alarm (ritual) (vsm)
+        - name: comprehend languages (ritual) (vsm)
+        - name: detect magic (ritual) (vs_)
+        - name: feather fall (v_m)
+          prepared: yes
+        - name: find familiar (ritual) (vsm)
+        - name: identify (ritual) (vsm)
+        - name: mage armor (vsm)
+          prepared: yes
+        - name: magic missile (vs_)
+        - name: shield (vsm)
+          prepared: yes
+        - name: sleep (vsm)
+
+    - lvl: 2
+      slots: 1/3
+      spells:
+        - name: scorching ray (vs_)
+          prepared: yes
+        - name: misty step (v__)
+          prepared: yes
+        - name: invisibility (vsm)
+          prepared: yes
+        - name: suggestion (v_m)
+        - name: detect thoughts (vsm)
+        - name: see invisibility (vsm)
+          prepared: yes
+
+    - lvl: 3
+      slots: 3/3
+      spells:
+        - name: counterspell (_s_)
+          prepared: yes
+        - name: fireball (vsm)
+          prepared: yes
+        - name: haste (vsm)
+        - name: fly (vsm)
+        - name: leomund's tiny hut (ritual) (vsm)
+        - name: intellect fortress (v__)
+        - name: incite greed (vsm)
+          cost: 50gp
+        - name: tiny servant (vs_)
+
+    - lvl: 4
+      slots: 0/3
+      spells:
+        - name: sickening radiance (vs_)
+          prepared: yes
+        - name: control water (vsm)
+          prepared: yes
+        - name: morty's private sanctum (vsm)
+          prepared: yes
+        - name: banishment (vsm)
+          prepared: yes
+
+    - lvl: 5
+      slots: 1/2
+      spells:
+        - name: animate objects (vs_)
+        - name: wall of force (vsm)
+          prepared: yes
+        - name: legend lore (vsm)
+          cost: 200gp, 0/250gp
+        - name: telekinesis (vs_)
+        - name: hold monster (vsm)
+          prepared: yes
+        - name: mists of dualee (v_m)
+          prepared: yes
+          cost: 100/50gp
+
+    - lvl: 6
+      slots: 1/1
+      spells: []
+
+languages:
+  - common
+  - faetari
+  - celestial (spoken)
+  - old common (written)
+  - old faetari (written)
+  - old celestial (written)
+weapon-proficiencies:
+  - daggers
+  - darts
+  - slings
+  - quarterstaves
+  - light crossbows
+tool-proficiencies:
+  - cartographer's tools
+
+money: $2.40
+attuned-items:
+  - emerald king's visage crown
+  - davy charm
+  - arcane grimoire
+  - flamel's focus
+inventory:
+  - enduring arcane grimoire (spellbook, +1 focus)
+  - backup spellbook
+  - explorer's pack
+  - blue-pink (trans bi) pearl (200gp)
+  - blue-black pearl (1500gp, but 2500gp worth of effectiveness)
+  - misc writing supplies (pen, 9 pieces of paper)
+  - mystery key
+  - quarterstaff
+  - flamel's +3 focus
+  - fine clothes (self-mending once per 24h)
+  - emerald king's visage crown
+  - spell ink ($490)
+  - silver dragonhide vestments (gives immunity to paralysis)
+
+item-descriptions:
+  - name: enduring arcane grimoire
+    desc: >
+      arcane focus, 
+      immune to time deterioration, 
+      immune to fire damage, 
+      immune to water damage, 
+      +1 to spell attack rolls, 
+      +1 to spell save DCs, 
+      +1 spell slot levels from Arcane Recovery
+  - name: emerald king's visage crown
+    desc: >
+      can cast Seeming 1/day, 
+      affect max 100 creatures within 50ft, 
+      lasts 24h, 
+      takes a DC 21 investigation to foil disguise
+  - name: flamel's focus
+    desc: >
+      arcane focus, 
+      +3 to spell attacks
+---

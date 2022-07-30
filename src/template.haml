@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+%html(lang="en")
+  %head
+    %meta(charset="UTF-8")/
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge")/
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")/
+
+    %link(rel="stylesheet" href="style.css")/
+    %title {{name}} (D&D 5e Character Sheet)
+  %body
+    %header 
+      %h1.name {{name}}
+      %table 
+        %tr 
+          %td
+            %span.label class & level
+            %span.content {{subclass}} {{class}} {{level}}
+          %td
+            %span.label background
+            %span.content {{background}}
+          %td
+            %span.label player name
+            %span.content {{player-name}}
+        %tr 
+          %td 
+            %span.label race
+            %span.content {{race}}
+          %td 
+            %span.label alignment
+            %span.content {{alignment}}
+          %td 
+            %span.label experience points
+            %span.content {{experience}}{{^experience}}N/A{{/experience}}
+    %main 
+      .inspiration 
+        %span.label inspiration
+        %span.content {{#inspiration}}inspired{{/inspiration}}
+      .proficiency 
+        %span.label proficiency
+        %span.content {{proficiency}}
+      .passive-perception 
+        %span.label passive perception 
+        %span.content {{passive-perception}}
+
+      %section.stats 
+        %ul
+          {{#stats}}
+          %li 
+            .name {{name}}
+            .val {{score}} ({{mod}})
+          {{/stats}}
+
+      %section.saves
+        %h2 saving throws
+        %ul
+          {{#stats}}
+          %li
+            %input(type="checkbox" checked={{proficient}}{{^proficient}}false{{/proficient}} disabled=true)
+            %span {{name}} {{save}}
+          {{/stats}}
+      
+      %section.skills
+        %h2 skills
+        %ul
+          {{#skills}}
+          %li
+            %input(type="checkbox" checked={{proficient}}{{^proficient}}false{{/proficient}} disabled=true)
+            %span {{name}} {{bonus}}
+          {{/skills}}
+
+      %section.other-proficiencies
+        %h2 other proficiencies & languages
+        %h3 languages
+        %ul   
+          {{#languages}}
+          %li {{.}}
+          {{/languages}}
+        %h3 weapon proficiencies
+        %ul 
+          {{#weapon-proficiencies}}
+          %li {{.}}
+          {{/weapon-proficiencies}}
+        %h3 tool proficiencies
+        %ul 
+          {{#tool-proficiencies}}
+          %li {{.}}
+          {{/tool-proficiencies}}
+      
+      %section.combat-info
+        .armor-class 
+          %span.label armor class
+          %span.content {{ac}}
+        .initiative 
+          %span.label initiative
+          %span.content {{initiative}}
+        .speed 
+          %span.label speed
+          %span.content {{speed}}
+
+      %section.health 
+        .hit-points 
+          %h2 current hit points
+          .max hit point maximum: {{hp.max}}
+          .current {{hp.current}}
+      
+        .temp-hit-points
+          %h2 temporary hit points
+          .current {{temp-hp}}
+
+        .hit-dice
+          %h2 hit dice
+          .max total: {{hit-dice.max}}
+          .current {{hit-dice.current}}
+
+        .death-saves
+          %h2 death saves
+          .passed successes: {{death-saves.passed}}
+          .failed failures: {{death-saves.failed}}
+
+      %section.actions
+        %h2 attacks & spellcasting
+        %ul
+          {{#actions}}
+          %li 
+          {{/actions}}
+
+      %section.equipment
+        %h3 equipment
+        %ul
+          %li money: {{money}}
+          {{#inventory}}
+          %li {{.}}
+          {{/inventory}}
+        %h3 attuned items:
+        %ul 
+          {{#attuned-items}}
+          %li {{.}}
+          {{/attuned-items}}
+
+      %section.personality
+        %h2 personality traits
+        %p {{personality-traits}}
+      %section.ideals
+        %h2 ideals
+        %p {{ideals}}
+      %section.bonds
+        %h2 bonds
+        %p {{bonds}}
+      %section.flaws
+        %h2 flaws
+        %p {{flaws}}
+
+      %section.feats
+        %h2 features & traits
+        %h3 class features
+        %ul 
+          {{#class-features}}
+          %li {{.}}
+          {{/class-features}}
+        %h3 feats
+        %ul 
+          {{#feats}}
+          %li {{.}}
+          {{/feats}}
+      
+    %section.spells 
+      {{#spells}}
+      .spell-class spellcasting class: {{class}}
+      .spell-stat spellcasting ability: {{stat}}
+      .spell-dc spell save DC: {{dc}}
+      .spell-attack spell attack: {{attack}}
+      .prepared-max spells prepared per day: {{prepared-max}}
+      
+
+      %table.spell-slots
+        %caption spell slots
+        %tr 
+          %th(scope="col") level
+          %th(scope="col") current
+          %th(scope="col") max
+        {{#slots}}
+        %tr 
+          %td {{lvl}}
+          %td {{cur}}
+          %td {{max}}
+        {{/slots}}
+
+      %ul.spells-known
+        {{#known}}
+        %h6 lvl {{lvl}}
+        %ul
+          {{#spells}}
+          %li
+            %input(type="checkbox" checked={{prepared}}{{^prepared}}false{{/prepared}} disabled=true)
+            %span {{name}}
+          {{/spells}}
+        {{/known}}
+      {{/spells}}
