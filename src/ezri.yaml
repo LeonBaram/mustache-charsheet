@@ -12,7 +12,7 @@ inspiration: no
 
 # hit points
 hp:
-  current: 103
+  current: 21
   max: 110
 # temporary hit points
 temp-hp: 0
@@ -96,13 +96,13 @@ spells:
   class: wizard
   stat: int
   attack: "+12" # int + proficiency (+3 from flamel's focus)
-  dc: 18 # int + proficiency + 8 (+1 from arcane grimoire)
-  prepared-max: 16 # int + (wizard level)
+  dc: 20 # int + proficiency + 8 (+3 from flamel's focus)
+  prepared-max: 17 # int + (wizard level)
   arcane-recovery: 7 # (wizard level) / 2, rounded up (+1 from arcane grimoire)
 
   slots:
-    lvl1: 4/4
-    lvl2: 4/4
+    lvl1: 2/4
+    lvl2: 2/4
     lvl3: 3/3
     lvl4: 3/3
     lvl5: 2/2
@@ -112,10 +112,10 @@ spells:
     - lvl: 0 # cantrips
       spells:
         - name: fire bolt (vs_)
+        - name: light (v_m)
         - name: mage hand (vs_)
         - name: message (vsm)
         - name: mind sliver (v__)
-        - name: light (v_m)
         - name: prestidigitation (vs_)
         - name: shocking grasp (vs_)
 
@@ -137,18 +137,18 @@ spells:
 
     - lvl: 2
       spells:
-        - name: scorching ray (vs_)
+        - name: detect thoughts (vsm)
+        - name: invisibility (vsm)
           prepared: yes
         - name: misty step (v__)
           prepared: yes
-        - name: invisibility (vsm)
+        - name: scorching ray (vs_)
           prepared: yes
-        - name: suggestion (v_m)
-        - name: detect thoughts (vsm)
         - name: see invisibility (vsm)
           prepared: yes
         - name: spiritual weapon (vs_) (autoprep)
-          prepared: yes
+          prepared: always
+        - name: suggestion (v_m)
 
     - lvl: 3
       spells:
@@ -156,43 +156,46 @@ spells:
           prepared: yes
         - name: fireball (vsm)
           prepared: yes
-        - name: haste (vsm)
         - name: fly (vsm)
-        - name: leomund's tiny hut (ritual) (vsm)
+        - name: haste (vsm)
         - name: intellect fortress (v__)
         - name: incite greed (vsm)
           cost: 50gp
+        - name: leomund's tiny hut (ritual) (vsm)
         - name: tiny servant (vs_)
 
     - lvl: 4
       spells:
-        - name: sickening radiance (vs_)
-          prepared: yes
-        - name: control water (vsm)
-          prepared: yes
-        - name: morty's private sanctum (vsm)
-          prepared: yes
         - name: banishment (vsm)
           prepared: yes
+        - name: control water (vsm)
         - name: dimension door (v__) (autoprep)
+          prepared: always
+        - name: morty's private sanctum (vsm)
+          prepared: yes
+        - name: sickening radiance (vs_)
           prepared: yes
 
     - lvl: 5
       spells:
         - name: animate objects (vs_)
-        - name: wall of force (vsm)
+        - name: conjure elemental (vsm)
+          prepared: yes
+        - name: hold monster (vsm)
           prepared: yes
         - name: legend lore (vsm)
           cost: 200gp, 0/250gp
-        - name: telekinesis (vs_)
-        - name: hold monster (vsm)
-          prepared: yes
         - name: mists of dualee (v_m)
           prepared: yes
           cost: 100/50gp
+        - name: telekinesis (vs_)
+        - name: wall of force (vsm)
+          prepared: yes
 
     - lvl: 6
-      spells: []
+      spells:
+        - name: scatter (v__)
+          prepared: yes
 
 languages:
   - common
