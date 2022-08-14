@@ -3,7 +3,7 @@ player-name: Leon
 name: Ezri Bartle
 level: 12
 class: wizard
-subclass: conjuration
+subclass: concentration
 race: human (variant)
 background: custom
 alignment: neutral
@@ -12,10 +12,10 @@ inspiration: no
 
 # hit points
 hp:
-  current: 21
+  current: 71
   max: 110
 # temporary hit points
-temp-hp: 0
+temp-hp: 10
 hit-dice:
   current: 0d6
   max: 12d6
@@ -34,7 +34,7 @@ death-saves:
 exhaustion: 0
 current-conditions:
 damage-immunities:
-condition-immunities: paralyzed, diseased, poisoned
+condition-immunities: paralyzed, diseased, poisoned, frightened
 resistances:
 
 feats:
@@ -43,12 +43,13 @@ feats:
   - resilient (con)
   - boon of perfect health (immune to all diseases and poisons, advantage on con saves)
   - boon of magical arts (learned dimension door and spiritual weapon, gained +1 4th & 2nd spell slots)
+  - captain america (permanently under effects of Heroism spell, STR set to 20)
 class-features:
   - spellbook
   - arcane recovery
-  - minor conjuration
+  - minor concentration
   - benign transposition
-  - focused conjuration
+  - focused concentration
 
 # long-rest-reminder:
 #   - reset full health
@@ -58,7 +59,7 @@ class-features:
 #   - reset benign transposition
 
 stats:
-  - { name: str, score:  6, mod: "-2", save: "-2", }
+  - { name: str, score: 20, mod: "+5", save: "+5", }
   - { name: dex, score: 18, mod: "+4", save: "+4", }
   - { name: con, score: 18, mod: "+4", save: "+8", proficient: yes } # advantage on saves
   - { name: int, score: 20, mod: "+5", save: "+9", proficient: yes }
@@ -101,7 +102,7 @@ spells:
   arcane-recovery: 7 # (wizard level) / 2, rounded up (+1 from arcane grimoire)
 
   slots:
-    lvl1: 2/4
+    lvl1: 1/4
     lvl2: 2/4
     lvl3: 3/3
     lvl4: 3/3
@@ -123,7 +124,7 @@ spells:
       spells:
         - name: alarm (ritual) (vsm)
         - name: comprehend languages (ritual) (vsm)
-        - name: detect magic (ritual) (vs_)
+        - name: detect magic (ritual) (vs_) (concentration)
         - name: feather fall (v_m)
           prepared: yes
         - name: find familiar (ritual) (vsm)
@@ -137,8 +138,8 @@ spells:
 
     - lvl: 2
       spells:
-        - name: detect thoughts (vsm)
-        - name: invisibility (vsm)
+        - name: detect thoughts (vsm) (concentration)
+        - name: invisibility (vsm) (concentration)
           prepared: yes
         - name: misty step (v__)
           prepared: yes
@@ -156,40 +157,41 @@ spells:
           prepared: yes
         - name: fireball (vsm)
           prepared: yes
-        - name: fly (vsm)
-        - name: haste (vsm)
-        - name: intellect fortress (v__)
-        - name: incite greed (vsm)
+        - name: fly (vsm) (concentration)
+        - name: haste (vsm) (concentration)
+        - name: intellect fortress (v__) (concentration)
+        - name: incite greed (vsm) (concentration)
           cost: 50gp
         - name: leomund's tiny hut (ritual) (vsm)
         - name: tiny servant (vs_)
 
     - lvl: 4
       spells:
-        - name: banishment (vsm)
-          prepared: yes
-        - name: control water (vsm)
+        - name: banishment (vsm) (autoprep) (concentration)
+          prepared: always
+        - name: control water (vsm) (concentration)
         - name: dimension door (v__) (autoprep)
           prepared: always
         - name: morty's private sanctum (vsm)
           prepared: yes
-        - name: sickening radiance (vs_)
+        - name: sickening radiance (vs_) (concentration)
           prepared: yes
 
     - lvl: 5
       spells:
-        - name: animate objects (vs_)
-        - name: conjure elemental (vsm)
+        - name: animate objects (vs_) (concentration)
+        - name: conjure elemental (vsm) (concentration)
           prepared: yes
-        - name: hold monster (vsm)
+        - name: hold monster (vsm) (concentration)
           prepared: yes
         - name: legend lore (vsm)
           cost: 200gp, 0/250gp
         - name: mists of dualee (v_m)
           prepared: yes
           cost: 100/50gp
-        - name: telekinesis (vs_)
-        - name: wall of force (vsm)
+        - name: telekinesis (vs_) (concentration)
+          prepared: yes
+        - name: wall of force (vsm) (concentration)
           prepared: yes
 
     - lvl: 6
