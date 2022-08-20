@@ -102,7 +102,7 @@ spells:
   arcane-recovery: 7 # (wizard level) / 2, rounded up (+1 from arcane grimoire)
 
   slots:
-    lvl1: 1/4
+    lvl1: 0/4
     lvl2: 2/4
     lvl3: 3/3
     lvl4: 3/3
