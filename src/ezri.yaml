@@ -15,7 +15,7 @@ hp:
   current: 71
   max: 110
 # temporary hit points
-temp-hp: 10
+temp-hp: 3
 hit-dice:
   current: 0d6
   max: 12d6
@@ -109,54 +109,78 @@ spells:
     lvl5: 2/2
     lvl6: 1/1
 
-  known:
-    - lvl: 0 # cantrips
-      spells:
-        - name: fire bolt (vs_)
-        - name: light (v_m)
-        - name: mage hand (vs_)
-        - name: message (vsm)
-        - name: mind sliver (v__)
-        - name: prestidigitation (vs_)
-        - name: shocking grasp (vs_)
+  cantrips:
+    - name: fire bolt (vs_)
+    - name: light (v_m)
+    - name: mage hand (vs_)
+    - name: message (vsm)
+    - name: mind sliver (v__)
+    - name: prestidigitation (vs_)
+    - name: shocking grasp (vs_)
 
+  prepared:
+    - lvl: 1
+      spells:
+        - feather fall
+        - mage armor
+        - shield
+        - sleep
+    - lvl: 2
+      spells:
+        - invisibility
+        - misty step
+        - scorching ray
+        - see invisibility
+        - spiritual weapon
+    - lvl: 3
+      spells:
+        - counterspell
+        - fireball
+    - lvl: 4
+      spells:
+        - banishment
+        - dimension door
+        - morty's private sanctum
+        - sickening radiance
+    - lvl: 5
+      spells:
+        - conjure elemental
+        - hold monster
+        - mists of dualee
+        - telekinesis
+        - wall of force
+    - lvl: 6
+      spells:
+        - scatter
+
+  known:
     - lvl: 1
       spells:
         - name: alarm (ritual) (vsm)
         - name: comprehend languages (ritual) (vsm)
         - name: detect magic (ritual) (vs_) (concentration)
         - name: feather fall (v_m)
-          prepared: yes
         - name: find familiar (ritual) (vsm)
         - name: identify (ritual) (vsm)
         - name: mage armor (vsm)
-          prepared: yes
         - name: magic missile (vs_)
         - name: shield (vsm)
-          prepared: yes
         - name: sleep (vsm)
 
     - lvl: 2
       spells:
         - name: detect thoughts (vsm) (concentration)
         - name: invisibility (vsm) (concentration)
-          prepared: yes
         - name: misty step (v__)
-          prepared: yes
         - name: scorching ray (vs_)
-          prepared: yes
         - name: see invisibility (vsm)
-          prepared: yes
         - name: spiritual weapon (vs_) (autoprep)
-          prepared: always
         - name: suggestion (v_m)
 
     - lvl: 3
       spells:
         - name: counterspell (_s_)
-          prepared: yes
         - name: fireball (vsm)
-          prepared: yes
         - name: fly (vsm) (concentration)
         - name: haste (vsm) (concentration)
         - name: intellect fortress (v__) (concentration)
@@ -168,36 +192,26 @@ spells:
     - lvl: 4
       spells:
         - name: banishment (vsm) (autoprep) (concentration)
-          prepared: always
         - name: control water (vsm) (concentration)
         - name: dimension door (v__) (autoprep)
-          prepared: always
         - name: morty's private sanctum (vsm)
-          prepared: yes
         - name: sickening radiance (vs_) (concentration)
-          prepared: yes
 
     - lvl: 5
       spells:
         - name: animate objects (vs_) (concentration)
         - name: conjure elemental (vsm) (concentration)
-          prepared: yes
         - name: hold monster (vsm) (concentration)
-          prepared: yes
         - name: legend lore (vsm)
           cost: 200gp, 0/250gp
         - name: mists of dualee (v_m)
-          prepared: yes
           cost: 100/50gp
         - name: telekinesis (vs_) (concentration)
-          prepared: yes
         - name: wall of force (vsm) (concentration)
-          prepared: yes
 
     - lvl: 6
       spells:
         - name: scatter (v__)
-          prepared: yes
 
 languages:
   - common
