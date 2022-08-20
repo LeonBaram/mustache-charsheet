@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+yq '.spells.known.[].spells.[] | select(.prepared) | .name' ezri.yaml
