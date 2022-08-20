@@ -12,10 +12,10 @@ inspiration: no
 
 # hit points
 hp:
-  current: 71
+  current: 16
   max: 110
 # temporary hit points
-temp-hp: 3
+temp-hp: 0
 hit-dice:
   current: 0d6
   max: 12d6
@@ -104,8 +104,8 @@ spells:
   slots:
     lvl1: 0/4
     lvl2: 2/4
-    lvl3: 3/3
-    lvl4: 3/3
+    lvl3: 1/3
+    lvl4: 2/3
     lvl5: 2/2
     lvl6: 1/1
 
@@ -124,7 +124,6 @@ spells:
         - feather fall
         - mage armor
         - shield
-        - sleep
     - lvl: 2
       spells:
         - invisibility
