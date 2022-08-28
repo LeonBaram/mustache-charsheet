@@ -149,7 +149,6 @@ spells:
       spells:
         - conjure elemental
         - mists of dualee
-        - telekinesis
         - wall of force
     - lvl: 6
       spells:
