@@ -100,7 +100,7 @@ spells:
   stat: int
   attack: "+12" # int + proficiency (+3 from flamel's focus)
   dc: 20 # int + proficiency + 8 (+3 from flamel's focus)
-  prepared-max: 18 # int + (wizard level)
+  prepared-max: 18 # int + (wizard level) (+3 autoprep)
   arcane-recovery: 7/7 # (wizard level) / 2, rounded up (+1 from arcane grimoire)
 
   slots:
@@ -149,6 +149,7 @@ spells:
       spells:
         - conjure elemental
         - mists of dualee
+        - telekinesis
         - wall of force
     - lvl: 6
       spells:
